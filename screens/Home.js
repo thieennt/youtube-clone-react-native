@@ -1,8 +1,8 @@
 import React from 'react';
-import {View, Text, ScrollView} from 'react-native';
+import {ScrollView, View} from 'react-native';
 import Header from '../components/Header';
-import TopNavigation from '../components/TopNavigation';
 import ShortSection from '../components/Shorts';
+import TopNavigation from '../components/TopNavigation';
 import VideoItem from '../components/Video';
 
 const HomeScreen = props => {

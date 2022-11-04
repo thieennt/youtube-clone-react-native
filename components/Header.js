@@ -54,9 +54,6 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'space-between',
   },
-  avatarWrapper: {
-    // borderRadius: '50%',
-  },
   avatar: {
     width: 24,
     height: 24,

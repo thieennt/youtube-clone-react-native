@@ -1,5 +1,5 @@
 import React from 'react';
-import {FlatList, StyleSheet} from 'react-native';
+import {FlatList} from 'react-native';
 import ShortItem from './ShortItem';
 
 const ListShort = () => {
@@ -14,8 +14,6 @@ const ListShort = () => {
     />
   );
 };
-
-const styles = StyleSheet.create({});
 
 export default ListShort;
 

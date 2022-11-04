@@ -2,20 +2,19 @@ import React from 'react';
 
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import {NavigationContainer} from '@react-navigation/native';
-import HomeScreen from './screens/Home';
+import {Image, Text, View} from 'react-native';
 import HomeIcon from './assets/icons/Home';
-import {Image, StyleSheet, Text, View} from 'react-native';
-import ShortsIcon from './assets/icons/Shorts';
-import UploadIcon from './assets/icons/Upload';
-import SubscriptionIcon from './assets/icons/Subscription';
-import LibraryIcon from './assets/icons/Library';
 import HomeBlackIcon from './assets/icons/HomeBlack';
-import ShortsBlackIcon from './assets/icons/ShortsBlack';
-import SubscriptionBlackIcon from './assets/icons/SubscriptionBlack';
+import LibraryIcon from './assets/icons/Library';
 import LibraryBlackIcon from './assets/icons/LibraryBlack';
+import ShortsIcon from './assets/icons/Shorts';
+import ShortsBlackIcon from './assets/icons/ShortsBlack';
+import SubscriptionIcon from './assets/icons/Subscription';
+import SubscriptionBlackIcon from './assets/icons/SubscriptionBlack';
+import HomeScreen from './screens/Home';
+import LibraryScreen from './screens/Library';
 import ShortsScreen from './screens/Shorts';
 import SubscriptionScreen from './screens/Subscription';
-import LibraryScreen from './screens/Library';
 
 const Tab = createBottomTabNavigator();
 
@@ -99,10 +98,3 @@ const App = () => {
 };
 
 export default App;
-
-const styles = StyleSheet.create({
-  text: {
-    fontSize: 12,
-    color: '#000',
-  },
-});

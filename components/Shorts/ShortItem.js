@@ -1,5 +1,5 @@
 import React from 'react';
-import {Image, ImageBackground, StyleSheet, Text, View} from 'react-native';
+import {ImageBackground, StyleSheet, Text, View} from 'react-native';
 import MoreVerticalIcon from '../../assets/icons/MoreVertical';
 
 const ShortItem = props => {

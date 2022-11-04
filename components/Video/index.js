@@ -2,12 +2,9 @@ import React from 'react';
 import {Image, StyleSheet, Text, View} from 'react-native';
 import MoreVerticalIcon from '../../assets/icons/MoreVertical';
 
-import {Link} from '@react-navigation/native';
-
 const VideoItem = props => {
   const {url, avatar, title, views, timer} = props;
   return (
-    // <Link to={{}}>
     <View style={styles.container}>
       <View style={styles.thumbnailWrapper}>
         <Image
@@ -37,17 +34,12 @@ const VideoItem = props => {
         </View>
       </View>
     </View>
-    // </Link>
   );
 };
 
 const styles = StyleSheet.create({
   container: {
     flexDirection: 'column',
-  },
-
-  thumbnailWrapper: {
-    // flex: 1,
   },
 
   thumbnail: {
