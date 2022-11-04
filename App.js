@@ -2,7 +2,7 @@ import React from 'react';
 
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import {NavigationContainer} from '@react-navigation/native';
-import {Image, Text, View} from 'react-native';
+import {Image, View} from 'react-native';
 import HomeIcon from './assets/icons/Home';
 import HomeBlackIcon from './assets/icons/HomeBlack';
 import LibraryIcon from './assets/icons/Library';
@@ -52,7 +52,7 @@ const App = () => {
           name="upload"
           component={HomeScreen}
           options={{
-            tabBarLabel: () => <Text style={styles.text}></Text>,
+            tabBarLabel: '',
             tabBarIcon: () => (
               <View
                 style={{
@@ -87,7 +87,6 @@ const App = () => {
           name="Library"
           component={LibraryScreen}
           options={{
-            tabBarIcon: () => <LibraryIcon />,
             tabBarIcon: ({focused}) =>
               focused ? <LibraryBlackIcon /> : <LibraryIcon />,
           }}

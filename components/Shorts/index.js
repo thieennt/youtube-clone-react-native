@@ -18,25 +18,6 @@ const styles = StyleSheet.create({
     marginVertical: 12,
     backgroundColor: '#fff',
   },
-  header: {
-    flexDirection: 'row',
-  },
-  icon: {
-    width: 24,
-    height: 29,
-    resizeMode: 'cover',
-  },
-  title: {
-    fontSize: 16,
-    fontWeight: '500',
-    color: '#000',
-    paddingHorizontal: 8,
-  },
-  subTitle: {
-    fontSize: 10,
-    fontWeight: '400',
-    color: '#9D9D9D',
-  },
 });
 
 export default ShortSection;

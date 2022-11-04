@@ -14,7 +14,7 @@ const ShortItem = props => {
         <View style={styles.icon}>
           <MoreVerticalIcon color="#FFF" style={{textAlign: 'right'}} />
         </View>
-        <View style={{}}>
+        <View>
           <Text style={styles.name}>{props.name}</Text>
           <Text style={styles.views}>{props.views} views</Text>
         </View>

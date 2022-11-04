@@ -1,19 +1,21 @@
 import React from 'react';
-import {Image, StyleSheet, Text, View} from 'react-native';
+import {Image, StyleSheet, Text, TouchableOpacity, View} from 'react-native';
 import MoreVerticalIcon from '../../assets/icons/MoreVertical';
-
-const VideoItem = props => {
-  const {url, avatar, title, views, timer} = props;
+import ShortsScreen from '../../screens/Shorts';
+import VideoScreen from '../../screens/VideoScreen';
+import {useNavigation} from '@react-navigation/native';
+const VideoItem = ({url, avatar, title, views, timer}) => {
+  const navigation = useNavigation();
   return (
     <View style={styles.container}>
-      <View style={styles.thumbnailWrapper}>
+      <TouchableOpacity onPress={() => navigation.navigate('Library')}>
         <Image
           style={styles.thumbnail}
           source={{
             uri: url,
           }}
         />
-      </View>
+      </TouchableOpacity>
       <View style={styles.infoWrapper}>
         <Image
           style={styles.avatar}

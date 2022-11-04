@@ -26,18 +26,16 @@ const TopNavigation = () => {
             keyExtractor={item => item.id}
             renderItem={({item}) => {
               return (
-                <View>
-                  <Text
-                    key={item.id}
-                    style={
-                      selectedIndex !== item.id
-                        ? styles.exploreItem
-                        : styles.exploreItemSelected
-                    }
-                    onPress={() => handleSeclect(item.id)}>
-                    {item.name}
-                  </Text>
-                </View>
+                <Text
+                  key={item.id}
+                  style={
+                    selectedIndex !== item.id
+                      ? styles.exploreItem
+                      : styles.exploreItemSelected
+                  }
+                  onPress={() => handleSeclect(item.id)}>
+                  {item.name}
+                </Text>
               );
             }}
           />
