@@ -1,31 +1,28 @@
+import {useNavigation} from '@react-navigation/native';
 import React from 'react';
 import {Image, StyleSheet, Text, TouchableOpacity, View} from 'react-native';
 import MoreVerticalIcon from '../../assets/icons/MoreVertical';
-import ShortsScreen from '../../screens/Shorts';
-import VideoScreen from '../../screens/VideoScreen';
-import {useNavigation} from '@react-navigation/native';
-const VideoItem = ({url, avatar, title, views, timer}) => {
+import UserAvatar from '../UserAvatar';
+
+export const CardItem = ({thumbnail, avatar, title, views, timer, videoId}) => {
   const navigation = useNavigation();
   return (
     <View style={styles.container}>
-      <TouchableOpacity onPress={() => navigation.navigate('Library')}>
+      <TouchableOpacity
+        style={{backgroundColor: 'green'}}
+        onPress={() => navigation.navigate('VideoScreen', {videoId: videoId})}>
         <Image
           style={styles.thumbnail}
           source={{
-            uri: url,
+            uri: thumbnail,
           }}
         />
       </TouchableOpacity>
       <View style={styles.infoWrapper}>
-        <Image
-          style={styles.avatar}
-          source={{
-            uri: avatar,
-          }}
-        />
+        <UserAvatar width={36} height={36} avatar={avatar} />
         <View style={styles.videoInfo}>
           <Text style={styles.videoTitle}>{title}</Text>
-          <View style={{flexDirection: 'row', alignItems: 'center'}}>
+          <View style={styles.infoDetail}>
             <Text style={styles.videoViews}>{views} views</Text>
             <View style={styles.dot} />
             <Text style={styles.videoTime}>{timer}</Text>
@@ -42,10 +39,11 @@ const VideoItem = ({url, avatar, title, views, timer}) => {
 const styles = StyleSheet.create({
   container: {
     flexDirection: 'column',
+    paddingBottom: 12,
   },
 
   thumbnail: {
-    height: 230,
+    height: 220,
     resizeMode: 'cover',
   },
 
@@ -58,8 +56,6 @@ const styles = StyleSheet.create({
   },
 
   avatar: {
-    width: 36,
-    height: 36,
     resizeMode: 'cover',
     borderRadius: 25,
   },
@@ -73,6 +69,11 @@ const styles = StyleSheet.create({
     color: '#0A0A0A',
     fontSize: 14,
     fontWeight: '500',
+  },
+
+  infoDetail: {
+    flexDirection: 'row',
+    alignItems: 'center',
   },
 
   videoViews: {
@@ -93,5 +94,3 @@ const styles = StyleSheet.create({
     marginHorizontal: 8,
   },
 });
-
-export default VideoItem;

@@ -1,16 +1,15 @@
 import React from 'react';
 import {Text, View} from 'react-native';
 import Header from '../components/Header';
+import {globalStyles} from '../styles';
 
-const SubscriptionScreen = () => {
+export const SubscriptionScreen = () => {
   return (
     <>
       <Header />
-      <View>
+      <View style={globalStyles.container}>
         <Text>Subscription Screen</Text>
       </View>
     </>
   );
 };
-
-export default SubscriptionScreen;

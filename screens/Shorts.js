@@ -1,16 +1,15 @@
 import React from 'react';
 import {Text, View} from 'react-native';
 import Header from '../components/Header';
+import {globalStyles} from '../styles';
 
-const ShortsScreen = () => {
+export const ShortsScreen = () => {
   return (
     <>
       <Header />
-      <View>
+      <View style={globalStyles.container}>
         <Text>Shorts Screen</Text>
       </View>
     </>
   );
 };
-
-export default ShortsScreen;

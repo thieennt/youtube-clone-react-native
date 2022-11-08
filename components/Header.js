@@ -1,10 +1,12 @@
+import {useNavigation} from '@react-navigation/native';
 import React from 'react';
-import {Image, StyleSheet, View} from 'react-native';
+import {Image, Pressable, StyleSheet, View} from 'react-native';
 import ConnectIcon from '../assets/icons/Connect';
 import NotifyIcon from '../assets/icons/Notify';
 import SearchIcon from '../assets/icons/Search';
 
 const Header = () => {
+  const navigation = useNavigation();
   return (
     <View style={styles.container}>
       <Image
@@ -15,8 +17,12 @@ const Header = () => {
       />
       <View style={styles.rightSection}>
         <ConnectIcon />
-        <NotifyIcon />
-        <SearchIcon />
+        <Pressable>
+          <NotifyIcon />
+        </Pressable>
+        <Pressable onPress={() => navigation.navigate('SearchScreen')}>
+          <SearchIcon />
+        </Pressable>
         <Image
           style={styles.avatar}
           source={{
@@ -30,11 +36,11 @@ const Header = () => {
 
 const styles = StyleSheet.create({
   container: {
-    width: '100%',
-    padding: 12,
     flexDirection: 'row',
     justifyContent: 'space-between',
     backgroundColor: '#fff',
+    paddingHorizontal: 12,
+    paddingVertical: 12,
   },
 
   wrapper: {
@@ -49,7 +55,7 @@ const styles = StyleSheet.create({
     height: 30,
   },
   rightSection: {
-    width: 140,
+    width: 160,
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-between',
