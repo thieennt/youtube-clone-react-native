@@ -5,19 +5,13 @@ import {Pressable, StyleSheet, Text, TextInput, View} from 'react-native';
 import ArrowLeftIcon from '../../assets/icons/ArrowLeft';
 import VoiceIcon from '../../assets/icons/Voice';
 
-const SearchHeader = props => {
+export const SearchHeader = props => {
   const navigation = useNavigation();
   const [value, setValue] = useState(props.value);
   const [searchResult, setSearchResult] = useState([]);
   const [loading, setLoading] = useState(false);
 
   console.log(searchResult);
-
-  // const handleSearchYoutube = async () => {
-  //   let res = await axios.get(
-  //     `https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=20&q=${value}&type=video&key=AIzaSyCW-mcjtshmtMlpLuFjWzarR-auzodar7I`,
-  //   );
-  // };
 
   const handleSearchYoutube = () => {
     setLoading(true);
@@ -75,5 +69,3 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
 });
-
-export default SearchHeader;

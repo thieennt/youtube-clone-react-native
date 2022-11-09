@@ -1,6 +1,5 @@
-import {Image, Pressable, StyleSheet, Text, View} from 'react-native';
 import React from 'react';
-import {globalStyles} from '../../styles';
+import {Image, Pressable, StyleSheet, Text, View} from 'react-native';
 
 export function FolderItem(props) {
   return (

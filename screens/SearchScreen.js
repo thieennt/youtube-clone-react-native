@@ -10,18 +10,30 @@ export const SearchScreen = () => {
   const navigation = useNavigation();
   const [value, setValue] = useState('');
   const [searchResult, setSearchResult] = useState([]);
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState();
 
-  const handleSearchYoutube = () => {
+  // const handleSearchYoutube = async () => {
+  //   setLoading(true);
+  //   try {
+  //     const res = await axios.get(
+  //       `https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=20&q=${value}&type=video&key=AIzaSyB_CxzJp0WG9pI2Ojt1jV12BQDkyAABrQw`,
+  //     );
+  //     setSearchResult(JSON.stringify(res.data.items));
+  //     setLoading(false);
+  //   } catch (error) {
+  //     setSearchResult(JSON.stringify(error));
+  //   }
+  // };
+
+  const handleSearchYoutube = async () => {
     setLoading(true);
-    fetch(
+    const response = await fetch(
       `https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=20&q=${value}&type=video&key=AIzaSyB_CxzJp0WG9pI2Ojt1jV12BQDkyAABrQw`,
-    )
-      .then(res => res.json())
-      .then(data => {
-        setLoading(false);
-        setSearchResult(data.items);
-      });
+    );
+
+    const data = await response.json();
+    setSearchResult(data.items);
+    setLoading(false);
   };
 
   return (
@@ -57,6 +69,7 @@ export const SearchScreen = () => {
                 title={item.snippet.title}
                 views="19,210,251"
                 timer={item.snippet.publishTime}
+                channelId={item.snippet.channelId}
               />
             ))}
           </>

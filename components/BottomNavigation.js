@@ -1,10 +1,10 @@
 import React from 'react';
 
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
-import {HomeScreen} from '../screens/Home';
-import {ShortsScreen} from '../screens/Shorts';
-import {SubscriptionScreen} from '../screens/Subscription';
-import {LibraryScreen} from '../screens/Library';
+import {HomeScreen} from '../screens/HomeScreen';
+import {ShortsScreen} from '../screens/ShortsScreen';
+import {SubscriptionScreen} from '../screens/SubscriptionScreen';
+import {LibraryScreen} from '../screens/LibraryScreen';
 
 import HomeIcon from '../assets/icons/Home';
 import HomeBlackIcon from '../assets/icons/HomeBlack';
@@ -14,11 +14,15 @@ import SubscriptionIcon from '../assets/icons/Subscription';
 import SubscriptionBlackIcon from '../assets/icons/SubscriptionBlack';
 import LibraryIcon from '../assets/icons/Library';
 import LibraryBlackIcon from '../assets/icons/LibraryBlack';
-import {Image, View} from 'react-native';
+import {Image, Pressable, View} from 'react-native';
+import {UploadScreen} from '../screens/UploadScreen';
+import {useNavigation} from '@react-navigation/native';
 
 const Tab = createBottomTabNavigator();
+const Placeholder = () => <View />;
 
 export const BottomNavigation = () => {
+  const navigation = useNavigation();
   return (
     <Tab.Navigator
       screenOptions={() => ({
@@ -47,7 +51,13 @@ export const BottomNavigation = () => {
       />
       <Tab.Screen
         name="Upload"
-        component={HomeScreen}
+        component={Placeholder}
+        listeners={({navigation}) => ({
+          tabPress: e => {
+            e.preventDefault();
+            navigation.navigate('UploadScreen');
+          },
+        })}
         options={{
           tabBarLabel: '',
           tabBarIcon: () => (
@@ -58,12 +68,8 @@ export const BottomNavigation = () => {
                 bottom: 0,
                 height: 42,
                 width: 42,
-                flexDirection: 'row',
-
-                justifyContent: 'center',
-                alignItems: 'center',
-                alignContent: 'center',
-              }}>
+              }}
+              onPress={() => navigation.navigate('UploadScreen')}>
               <Image
                 source={require('../assets/icons/uploadWhite.png')}
                 style={{width: 42, height: 42, resizeMode: 'cover'}}

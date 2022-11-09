@@ -13,17 +13,17 @@ export const HomeScreen = props => {
     handleFetchData();
   }, []);
 
-  const handleFetchData = () => {
-    setLoading(true);
-    fetch(
+  const handleFetchData = async () => {
+    const response = await fetch(
       `https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=40&type=video&key=AIzaSyB_CxzJp0WG9pI2Ojt1jV12BQDkyAABrQw`,
-    )
-      .then(res => res.json())
-      .then(data => {
-        setLoading(false);
-        setListVideo(data.items);
-      });
+    );
+
+    const data = await response.json();
+    console.log('data', data);
+    setListVideo(data.items);
+    setLoading(false);
   };
+
   return (
     <>
       <Header />
@@ -43,6 +43,8 @@ export const HomeScreen = props => {
                   title={item.snippet.title}
                   views="1,210,251"
                   timer={item.snippet.publishTime}
+                  channelId={item.snippet.channelId}
+                  channelTitle={item.snippet.channelTitle}
                 />
               ))}
             </>

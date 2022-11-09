@@ -1,7 +1,7 @@
 import React from 'react';
 import WebView from 'react-native-webview';
 
-export function VideoScreen({route}) {
+export const VideoScreen = ({route}) => {
   const {videoId} = route.params;
   return (
     <WebView
@@ -9,4 +9,4 @@ export function VideoScreen({route}) {
       style={{flex: 1}}
     />
   );
-}
+};

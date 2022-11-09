@@ -1,11 +1,44 @@
 import {useNavigation} from '@react-navigation/native';
-import React from 'react';
-import {Image, StyleSheet, Text, TouchableOpacity, View} from 'react-native';
+import React, {useEffect, useState} from 'react';
+import {
+  Image,
+  Pressable,
+  StyleSheet,
+  Text,
+  TouchableOpacity,
+  View,
+} from 'react-native';
 import MoreVerticalIcon from '../../assets/icons/MoreVertical';
 import UserAvatar from '../UserAvatar';
+import {PopupMenu} from './PopupMenu';
+import dayjs from 'dayjs';
 
-export const CardItem = ({thumbnail, avatar, title, views, timer, videoId}) => {
+export const CardItem = ({
+  thumbnail,
+  avatar,
+  title,
+  views,
+  timer,
+  videoId,
+  channelId,
+  channelTitle,
+}) => {
   const navigation = useNavigation();
+  const [showPopup, setShowPopup] = useState(false);
+  const [channelInfo, setChannelInfo] = useState([]);
+
+  useEffect(() => {
+    handleGetChannelInfo();
+  }, []);
+
+  const handleGetChannelInfo = async () => {
+    const response = await fetch(
+      `https://youtube.googleapis.com/youtube/v3/channels?part=snippet&id=${channelId}&key=AIzaSyB_CxzJp0WG9pI2Ojt1jV12BQDkyAABrQw`,
+    );
+    const data = await response.json();
+    setChannelInfo(data.items);
+  };
+
   return (
     <View style={styles.container}>
       <TouchableOpacity
@@ -19,18 +52,38 @@ export const CardItem = ({thumbnail, avatar, title, views, timer, videoId}) => {
         />
       </TouchableOpacity>
       <View style={styles.infoWrapper}>
-        <UserAvatar width={36} height={36} avatar={avatar} />
+        {channelInfo.map((item, index) => (
+          <UserAvatar
+            key={index}
+            width={36}
+            height={36}
+            avatar={item.snippet.thumbnails.default.url}
+          />
+        ))}
         <View style={styles.videoInfo}>
           <Text style={styles.videoTitle}>{title}</Text>
           <View style={styles.infoDetail}>
+            <Text style={styles.channelTitle}>{channelTitle}</Text>
+            <View style={styles.dot} />
             <Text style={styles.videoViews}>{views} views</Text>
             <View style={styles.dot} />
-            <Text style={styles.videoTime}>{timer}</Text>
+            <Text style={styles.videoTime}>
+              {dayjs(timer).format('DD-MM-YYYY')}
+            </Text>
           </View>
         </View>
-        <View style={styles.actionMore}>
+        <Pressable
+          style={styles.actionMore}
+          onPress={() => setShowPopup(!showPopup)}>
           <MoreVerticalIcon color="#0A0A0A" />
-        </View>
+          {showPopup ? (
+            <View style={styles.popupWrapper}>
+              <PopupMenu />
+            </View>
+          ) : (
+            ''
+          )}
+        </Pressable>
       </View>
     </View>
   );
@@ -53,6 +106,7 @@ const styles = StyleSheet.create({
     paddingVertical: 14,
     paddingHorizontal: 12,
     backgroundColor: '#fff',
+    position: 'relative',
   },
 
   avatar: {
@@ -91,6 +145,16 @@ const styles = StyleSheet.create({
     height: 2,
     borderRadius: 25,
     backgroundColor: '#6C6C6C',
-    marginHorizontal: 8,
+    marginHorizontal: 4,
+  },
+  actionMore: {},
+  popupWrapper: {
+    position: 'absolute',
+    right: 0,
+    top: 30,
+    zIndex: 100,
+  },
+  channelTitle: {
+    fontSize: 12,
   },
 });
