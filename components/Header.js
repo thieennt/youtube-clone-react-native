@@ -23,12 +23,14 @@ const Header = () => {
         <Pressable onPress={() => navigation.navigate('SearchScreen')}>
           <SearchIcon />
         </Pressable>
-        <Image
-          style={styles.avatar}
-          source={{
-            uri: 'https://s3-alpha-sig.figma.com/img/51e2/a137/6a691a2bb1288149da9cadbfb936b026?Expires=1668384000&Signature=BReyfm9-ep4bS4F2xp5zCxPyl1MOsBac2oQf-oN7tVNWrf~jyQbqLyWjdOHkHNH~HY7Zr8eku6G~n1THHk8aX4xZ5xpGQtLZX4lcZxqi404Yi6GWzfUHyrWWPdegIrtgUIngGjs3PTE9IO0RXQ1NxQDUw5snpPQbvXID87O6MMnYaJAQ~95GitxRgksBWmPsVmL7-VB2rxrDQRNfBStwpw2-GmJlHF1ylmbO5IxiF4v1mrR7Yttiz9mbE-G0umVt6bbzEzCWkqTQTK8EwFnK967HAn4Z5nyHAKdlJE8lYUEsI1yhDUIMO51h3fEMK76gRT3e~GK-ghEa7eyIy-ptsQ__&Key-Pair-Id=APKAINTVSUGEWH5XD5UA',
-          }}
-        />
+        <Pressable onPress={() => navigation.navigate('AvatarScreen')}>
+          <Image
+            style={styles.avatar}
+            source={{
+              uri: 'https://s3-alpha-sig.figma.com/img/51e2/a137/6a691a2bb1288149da9cadbfb936b026?Expires=1668384000&Signature=BReyfm9-ep4bS4F2xp5zCxPyl1MOsBac2oQf-oN7tVNWrf~jyQbqLyWjdOHkHNH~HY7Zr8eku6G~n1THHk8aX4xZ5xpGQtLZX4lcZxqi404Yi6GWzfUHyrWWPdegIrtgUIngGjs3PTE9IO0RXQ1NxQDUw5snpPQbvXID87O6MMnYaJAQ~95GitxRgksBWmPsVmL7-VB2rxrDQRNfBStwpw2-GmJlHF1ylmbO5IxiF4v1mrR7Yttiz9mbE-G0umVt6bbzEzCWkqTQTK8EwFnK967HAn4Z5nyHAKdlJE8lYUEsI1yhDUIMO51h3fEMK76gRT3e~GK-ghEa7eyIy-ptsQ__&Key-Pair-Id=APKAINTVSUGEWH5XD5UA',
+            }}
+          />
+        </Pressable>
       </View>
     </View>
   );

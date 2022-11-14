@@ -70,6 +70,7 @@ export const SearchScreen = () => {
                 views="19,210,251"
                 timer={item.snippet.publishTime}
                 channelId={item.snippet.channelId}
+                channelTitle={item.snippet.channelTitle}
               />
             ))}
           </>

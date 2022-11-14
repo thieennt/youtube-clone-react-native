@@ -15,11 +15,10 @@ export const HomeScreen = props => {
 
   const handleFetchData = async () => {
     const response = await fetch(
-      `https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=40&type=video&key=AIzaSyB_CxzJp0WG9pI2Ojt1jV12BQDkyAABrQw`,
+      `https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=40&q=react-native&type=video&key=AIzaSyB_CxzJp0WG9pI2Ojt1jV12BQDkyAABrQw`,
     );
 
     const data = await response.json();
-    console.log('data', data);
     setListVideo(data.items);
     setLoading(false);
   };

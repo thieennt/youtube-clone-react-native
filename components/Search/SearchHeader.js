@@ -11,8 +11,6 @@ export const SearchHeader = props => {
   const [searchResult, setSearchResult] = useState([]);
   const [loading, setLoading] = useState(false);
 
-  console.log(searchResult);
-
   const handleSearchYoutube = () => {
     setLoading(true);
     fetch(
@@ -22,7 +20,6 @@ export const SearchHeader = props => {
       .then(data => {
         setLoading(false);
         setSearchResult(data.items);
-        console.log('data', data.items);
       });
   };
 

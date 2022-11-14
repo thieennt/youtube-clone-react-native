@@ -128,6 +128,7 @@ const styles = StyleSheet.create({
   infoDetail: {
     flexDirection: 'row',
     alignItems: 'center',
+    flexWrap: 'wrap',
   },
 
   videoViews: {
