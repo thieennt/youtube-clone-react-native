@@ -3,6 +3,7 @@ import React from 'react';
 import {Pressable, StyleSheet, Text, View} from 'react-native';
 import CameraIcon from '../assets/icons/Camera';
 import CloseIcon from '../assets/icons/Close';
+import LivestreamIcon from '../assets/icons/Livestream';
 import ShortsIcon from '../assets/icons/Shorts';
 import {UploadItem} from '../components/Upload/UploadItem';
 
@@ -18,12 +19,12 @@ export const UploadScreen = () => {
           </Pressable>
         </View>
         <UploadItem icon={<ShortsIcon />} name="Create short video" />
-        <Pressable onPress={() => navigation.navigate('AvatarScreen')}>
+        <Pressable onPress={() => navigation.navigate('ProfileScreen')}>
           <UploadItem icon={<CameraIcon />} name="Upload your avatar" />
         </Pressable>
-        <UploadItem icon={<ShortsIcon />} name="Create short video" />
+        <UploadItem icon={<LivestreamIcon />} name="Upload your video" />
       </Pressable>
-      <View style={{height: 50}} />
+      {/* <View style={{height: 50}} /> */}
     </Pressable>
   );
 };
@@ -39,7 +40,9 @@ const styles = StyleSheet.create({
   boxModal: {
     backgroundColor: 'white',
     width: '100%',
-    height: '30%',
+    height: '32%',
     padding: 12,
+    borderTopLeftRadius: 12,
+    borderTopRightRadius: 12,
   },
 });

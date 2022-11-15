@@ -9,12 +9,16 @@ const Header = () => {
   const navigation = useNavigation();
   return (
     <View style={styles.container}>
-      <Image
-        style={styles.logo}
-        source={{
-          uri: 'https://s3-alpha-sig.figma.com/img/4d89/a00a/7848f66e9291878806f3c838dcee4b1a?Expires=1668384000&Signature=NRwATtHZzbSIdVGy1ABym9gvm7Icyu8eXroVdBz61wO3xBB~rAuo9LM5aWoFub8tTNBOhjFXgXxJZ4dPa0VFsQLM85VPPA6PLyc55pA4olm9yuT7E3zB0iCu0ZRrrP2zpQmsVe~MLky6J40ocz6ukJqC5i7KSP7ig9GMdcuh~nMk1k96otBtU70kg3p89M7lhB8MggBlOikOaU9S7tBDtpWDaXCw7oPblcD0t3JCCj8YgZCeGiHwlqFycoTBqFMfvS4CcYe~0mox3x0BEWaAeW~VJLrH4C4zH8xQ7YFpPZiz8Y1dvKIKNIgJBdC9F7zHfJxaNatTIha3lQWT8e8tIQ__&Key-Pair-Id=APKAINTVSUGEWH5XD5UA',
-        }}
-      />
+      <Pressable
+        onPress={() => navigation.navigate('Home')}
+        style={{width: '50%'}}>
+        <Image
+          style={styles.logo}
+          source={{
+            uri: 'https://s3-alpha-sig.figma.com/img/4d89/a00a/7848f66e9291878806f3c838dcee4b1a?Expires=1668384000&Signature=NRwATtHZzbSIdVGy1ABym9gvm7Icyu8eXroVdBz61wO3xBB~rAuo9LM5aWoFub8tTNBOhjFXgXxJZ4dPa0VFsQLM85VPPA6PLyc55pA4olm9yuT7E3zB0iCu0ZRrrP2zpQmsVe~MLky6J40ocz6ukJqC5i7KSP7ig9GMdcuh~nMk1k96otBtU70kg3p89M7lhB8MggBlOikOaU9S7tBDtpWDaXCw7oPblcD0t3JCCj8YgZCeGiHwlqFycoTBqFMfvS4CcYe~0mox3x0BEWaAeW~VJLrH4C4zH8xQ7YFpPZiz8Y1dvKIKNIgJBdC9F7zHfJxaNatTIha3lQWT8e8tIQ__&Key-Pair-Id=APKAINTVSUGEWH5XD5UA',
+          }}
+        />
+      </Pressable>
       <View style={styles.rightSection}>
         <ConnectIcon />
         <Pressable>
@@ -23,7 +27,7 @@ const Header = () => {
         <Pressable onPress={() => navigation.navigate('SearchScreen')}>
           <SearchIcon />
         </Pressable>
-        <Pressable onPress={() => navigation.navigate('AvatarScreen')}>
+        <Pressable onPress={() => navigation.navigate('ProfileScreen')}>
           <Image
             style={styles.avatar}
             source={{
@@ -52,7 +56,7 @@ const styles = StyleSheet.create({
     borderBottomColor: '#CECECE',
   },
   logo: {
-    width: '30%',
+    width: '50%',
     height: 30,
   },
   rightSection: {

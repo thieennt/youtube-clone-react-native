@@ -3,7 +3,7 @@ import {ScrollView, View} from 'react-native';
 import Header from '../components/Header';
 import {CardItem} from '../components/Search/CardItem';
 import ShortSection from '../components/Shorts';
-import TopNavigation from '../components/TopNavigation';
+import TopNavigation from '../navigation/TopNavigation';
 
 export const HomeScreen = props => {
   const [listVideo, setListVideo] = useState([]);

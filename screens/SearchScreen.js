@@ -5,28 +5,17 @@ import ArrowLeftIcon from '../assets/icons/ArrowLeft';
 import VoiceIcon from '../assets/icons/Voice';
 import {CardItem} from '../components/Search/CardItem';
 import SearchItem from '../components/Search/SearchItem';
+// import AsyncStorage from '@react-native-community/async-storage';
 
 export const SearchScreen = () => {
   const navigation = useNavigation();
   const [value, setValue] = useState('');
   const [searchResult, setSearchResult] = useState([]);
-  const [loading, setLoading] = useState();
-
-  // const handleSearchYoutube = async () => {
-  //   setLoading(true);
-  //   try {
-  //     const res = await axios.get(
-  //       `https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=20&q=${value}&type=video&key=AIzaSyB_CxzJp0WG9pI2Ojt1jV12BQDkyAABrQw`,
-  //     );
-  //     setSearchResult(JSON.stringify(res.data.items));
-  //     setLoading(false);
-  //   } catch (error) {
-  //     setSearchResult(JSON.stringify(error));
-  //   }
-  // };
+  const [loading, setLoading] = useState(true);
+  const [searchKeyword, setSearchKeyword] = useState(value);
+  console.log('searchKeyword', searchKeyword);
 
   const handleSearchYoutube = async () => {
-    setLoading(true);
     const response = await fetch(
       `https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=20&q=${value}&type=video&key=AIzaSyB_CxzJp0WG9pI2Ojt1jV12BQDkyAABrQw`,
     );
@@ -34,6 +23,9 @@ export const SearchScreen = () => {
     const data = await response.json();
     setSearchResult(data.items);
     setLoading(false);
+    setSearchKeyword([...searchKeyword, value]);
+    const listKeyword = JSON.stringify(searchKeyword);
+    // await AsyncStorage.setItem('search_keyword', listKeyword);
   };
 
   return (
@@ -47,11 +39,10 @@ export const SearchScreen = () => {
           onChangeText={text => setValue(text)}
           placeholder="Search on Youtube"
           style={styles.searchInput}
+          onSubmitEditing={() => handleSearchYoutube()}
           autoFocus
         />
-        <Pressable
-          style={styles.searchVoice}
-          onPress={() => handleSearchYoutube()}>
+        <Pressable style={styles.searchVoice}>
           <VoiceIcon />
         </Pressable>
       </View>
@@ -76,10 +67,9 @@ export const SearchScreen = () => {
           </>
         ) : (
           <>
-            {loading &&
-              listSearch.map(item => (
-                <SearchItem title={item.title} key={item.id} />
-              ))}
+            {listSearch.map((item, index) => (
+              <SearchItem title={item.title} key={index} />
+            ))}
           </>
         )}
       </ScrollView>

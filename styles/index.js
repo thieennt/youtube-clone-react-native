@@ -10,4 +10,20 @@ export const globalStyles = StyleSheet.create({
   textBlack: {
     color: 'black',
   },
+  row: {
+    flexDirection: 'row',
+  },
+  rowCenter: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  column: {
+    flexDirection: 'column',
+  },
+  cloumnCenter: {
+    flexDirection: 'column',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
 });

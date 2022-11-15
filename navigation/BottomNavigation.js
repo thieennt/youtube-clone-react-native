@@ -1,13 +1,13 @@
 import React, {useState} from 'react';
-
+import {View} from 'react-native';
+import {useNavigation} from '@react-navigation/native';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
+
 import {HomeScreen} from '../screens/HomeScreen';
 import {LibraryScreen} from '../screens/LibraryScreen';
 import {ShortsScreen} from '../screens/ShortsScreen';
 import {SubscriptionScreen} from '../screens/SubscriptionScreen';
 
-import {useNavigation} from '@react-navigation/native';
-import {Image, View} from 'react-native';
 import HomeIcon from '../assets/icons/Home';
 import HomeBlackIcon from '../assets/icons/HomeBlack';
 import LibraryIcon from '../assets/icons/Library';
@@ -16,13 +16,14 @@ import ShortsIcon from '../assets/icons/Shorts';
 import ShortsBlackIcon from '../assets/icons/ShortsBlack';
 import SubscriptionIcon from '../assets/icons/Subscription';
 import SubscriptionBlackIcon from '../assets/icons/SubscriptionBlack';
+import UploadIcon from '../assets/icons/Upload';
 
 const Tab = createBottomTabNavigator();
 const Placeholder = () => <View />;
 
 export const BottomNavigation = () => {
   const navigation = useNavigation();
-  const [isVisible, setIsVisible] = useState(true);
+
   return (
     <Tab.Navigator
       screenOptions={() => ({
@@ -32,6 +33,7 @@ export const BottomNavigation = () => {
         tabBarLabelStyle: {
           fontSize: 12,
         },
+        initialRouteName: 'Home',
       })}>
       <Tab.Screen
         name="Home"
@@ -55,31 +57,21 @@ export const BottomNavigation = () => {
         listeners={{
           tabPress: e => {
             e.preventDefault();
-            navigation.navigate('UploadScreen', {isVisible: true});
+            navigation.navigate('UploadScreen');
           },
         }}
-        // listeners={() => ({
-        //   tabPress: e => {
-        //     e.preventDefault();
-        //     navigation.navigate('UploadScreen', {isVisible: isVisible});
-        //   },
-        // })}
         options={{
           tabBarLabel: '',
           tabBarIcon: () => (
             <View
               style={{
                 position: 'absolute',
-                top: 0,
+                top: 3,
                 bottom: 0,
                 height: 42,
                 width: 42,
-              }}
-              onPress={() => navigation.navigate('UploadScreen')}>
-              <Image
-                source={require('../assets/icons/uploadWhite.png')}
-                style={{width: 42, height: 42, resizeMode: 'cover'}}
-              />
+              }}>
+              <UploadIcon />
             </View>
           ),
         }}

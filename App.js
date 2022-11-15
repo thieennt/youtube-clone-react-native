@@ -1,16 +1,15 @@
 import React from 'react';
-// import 'react-native-gesture-handler';
 
 import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
-import {BottomNavigation} from './components/BottomNavigation';
-import {SearchScreen} from './screens/SearchScreen';
-import {VideoPlayerScreen} from './screens/VideoPlayerScreen';
 
+import {SearchScreen} from './screens/SearchScreen';
 import {UploadScreen} from './screens/UploadScreen';
 import {VideoScreen} from './screens/VideoScreen';
-import './styles';
 import {AvatarScreen} from './screens/AvatarScreen';
+import {ProfileScreen} from './screens/ProfileScreen';
+import {BottomNavigation} from './navigation/BottomNavigation';
+import './styles';
 
 const Stack = createNativeStackNavigator();
 
@@ -24,9 +23,9 @@ const App = () => {
         }}>
         <Stack.Screen name="BottomNavigation" component={BottomNavigation} />
         <Stack.Screen name="SearchScreen" component={SearchScreen} />
-        <Stack.Screen name="ViewScreen" component={VideoPlayerScreen} />
         <Stack.Screen name="VideoScreen" component={VideoScreen} />
         <Stack.Screen name="AvatarScreen" component={AvatarScreen} />
+        <Stack.Screen name="ProfileScreen" component={ProfileScreen} />
 
         <Stack.Screen
           name="UploadScreen"

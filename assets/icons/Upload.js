@@ -3,28 +3,28 @@ import Svg, {ClipPath, Defs, G, Path, Rect} from 'react-native-svg';
 
 const UploadIcon = props => (
   <Svg
-    width="44"
-    height="44"
-    viewBox="0 0 44 44"
+    width="42"
+    height="42"
+    viewBox="0 0 42 42"
     fill="none"
     xmlns="http://www.w3.org/2000/svg">
     <G clip-path="url(#clip0_132_2071)">
       <Path
         fill-rule="evenodd"
         clip-rule="evenodd"
-        d="M23 21V12.8333H21V21H12.8333V23H21V31.1667H23V23H31.1667V21H23Z"
+        d="M21.9545 20.0455V12.25H20.0455V20.0455H12.25V21.9546H20.0455V29.75H21.9545V21.9546H29.75V20.0455H21.9545Z"
         fill="black"
       />
       <Path
         fill-rule="evenodd"
         clip-rule="evenodd"
-        d="M22 2.00001C10.9543 2.00001 2 10.9543 2 22C2 33.0457 10.9543 42 22 42C33.0457 42 42 33.0457 42 22C42 10.9543 33.0457 2.00001 22 2.00001ZM3.66667 22C3.66667 11.88 11.88 3.66666 22 3.66666C32.12 3.66666 40.3333 11.88 40.3333 22C40.3333 32.12 32.12 40.3333 22 40.3333C11.88 40.3333 3.66667 32.12 3.66667 22Z"
+        d="M21 1.9091C10.4564 1.9091 1.90909 10.4564 1.90909 21C1.90908 31.5436 10.4564 40.0909 21 40.0909C31.5436 40.0909 40.0909 31.5436 40.0909 21C40.0909 10.4564 31.5436 1.9091 21 1.9091ZM3.5 21C3.5 11.34 11.34 3.5 21 3.5C30.66 3.5 38.5 11.34 38.5 21C38.5 30.66 30.66 38.5 21 38.5C11.34 38.5 3.5 30.66 3.5 21Z"
         fill="black"
       />
     </G>
     <Defs>
       <ClipPath id="clip0_132_2071">
-        <Rect width="44" height="44" fill="white" />
+        <Rect width="42" height="42" fill="white" />
       </ClipPath>
     </Defs>
   </Svg>

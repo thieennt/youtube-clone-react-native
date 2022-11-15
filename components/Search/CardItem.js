@@ -1,4 +1,5 @@
 import {useNavigation} from '@react-navigation/native';
+import dayjs from 'dayjs';
 import React, {useEffect, useState} from 'react';
 import {
   Image,
@@ -9,13 +10,11 @@ import {
   View,
 } from 'react-native';
 import MoreVerticalIcon from '../../assets/icons/MoreVertical';
+import {globalStyles} from '../../styles';
 import UserAvatar from '../UserAvatar';
-import {PopupMenu} from './PopupMenu';
-import dayjs from 'dayjs';
 
 export const CardItem = ({
   thumbnail,
-  avatar,
   title,
   views,
   timer,
@@ -61,7 +60,9 @@ export const CardItem = ({
           />
         ))}
         <View style={styles.videoInfo}>
-          <Text style={styles.videoTitle}>{title}</Text>
+          <Text style={styles.videoTitle} numberOfLines={2}>
+            {title}
+          </Text>
           <View style={styles.infoDetail}>
             <Text style={styles.channelTitle}>{channelTitle}</Text>
             <View style={styles.dot} />
@@ -78,7 +79,12 @@ export const CardItem = ({
           <MoreVerticalIcon color="#0A0A0A" />
           {showPopup ? (
             <View style={styles.popupWrapper}>
-              <PopupMenu />
+              <Pressable style={styles.btnItem}>
+                <Text style={globalStyles.textBlack}>Download</Text>
+              </Pressable>
+              <Pressable style={styles.btnItem}>
+                <Text style={globalStyles.textBlack}>Add to watch later</Text>
+              </Pressable>
             </View>
           ) : (
             ''
@@ -148,14 +154,29 @@ const styles = StyleSheet.create({
     backgroundColor: '#6C6C6C',
     marginHorizontal: 4,
   },
-  actionMore: {},
   popupWrapper: {
+    width: 160,
+    height: 100,
+    borderRadius: 8,
     position: 'absolute',
     right: 0,
     top: 30,
     zIndex: 100,
+    backgroundColor: 'white',
+    shadowColor: '#000',
+    shadowOffset: {
+      width: 0,
+      height: 5,
+    },
+    shadowOpacity: 0.34,
+    shadowRadius: 6.27,
+    elevation: 10,
+    padding: 12,
   },
   channelTitle: {
     fontSize: 12,
+  },
+  btnItem: {
+    padding: 6,
   },
 });

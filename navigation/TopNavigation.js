@@ -9,6 +9,7 @@ const TopNavigation = () => {
 
   const handleSeclect = index => {
     setSelectedIndex(index) && setSelected(!selected);
+    console.log(index);
   };
 
   return (
@@ -27,7 +28,6 @@ const TopNavigation = () => {
             renderItem={({item}) => {
               return (
                 <Text
-                  key={item.id}
                   style={
                     selectedIndex !== item.id
                       ? styles.exploreItem
