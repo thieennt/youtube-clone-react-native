@@ -1,9 +1,9 @@
 import {useNavigation} from '@react-navigation/native';
 import React from 'react';
 import {Image, Pressable, StyleSheet, View} from 'react-native';
-import ConnectIcon from '../assets/icons/Connect';
-import NotifyIcon from '../assets/icons/Notify';
-import SearchIcon from '../assets/icons/Search';
+import ConnectIcon from '../../../assets/icons/Connect';
+import NotifyIcon from '../../../assets/icons/Notify';
+import SearchIcon from '../../../assets/icons/Search';
 
 export const Header = () => {
   const navigation = useNavigation();

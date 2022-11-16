@@ -9,7 +9,7 @@ import {
   TouchableOpacity,
   View,
 } from 'react-native';
-import MoreVerticalIcon from '../../assets/icons/MoreVertical';
+import MoreVerticalIcon from '../../../assets/icons/MoreVertical';
 import {globalStyles} from '../../styles';
 import UserAvatar from '../UserAvatar';
 

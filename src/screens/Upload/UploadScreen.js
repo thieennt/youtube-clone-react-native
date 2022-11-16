@@ -1,11 +1,12 @@
 import {useNavigation} from '@react-navigation/native';
 import React from 'react';
 import {Pressable, StyleSheet, Text, View} from 'react-native';
-import CameraIcon from '../assets/icons/Camera';
-import CloseIcon from '../assets/icons/Close';
-import LivestreamIcon from '../assets/icons/Livestream';
-import ShortsIcon from '../assets/icons/Shorts';
+
 import {UploadItem} from '../../components/UploadItem';
+import ShortsIcon from '../../../assets/icons/Shorts';
+import CameraIcon from '../../../assets/icons/Camera';
+import CloseIcon from '../../../assets/icons/Close';
+import LivestreamIcon from '../../../assets/icons/Livestream';
 
 export const UploadScreen = () => {
   const navigation = useNavigation();

@@ -1,15 +1,15 @@
-import {StyleSheet, Text, View} from 'react-native';
 import React from 'react';
-import {FolderItem} from '../../components/FolderItem';
+import {StyleSheet, View} from 'react-native';
 import ChannelIcon from '../../assets/icons/profile/Channel';
-import StudioIcon from '../../assets/icons/profile/Studio';
-import ExploreIcon from '../../assets/icons/profile/Explore';
-import TimeIcon from '../../assets/icons/profile/Time';
-import SwitchIcon from '../../assets/icons/profile/Switch';
-import IncognitoIcon from '../../assets/icons/profile/Incognito';
 import DataIcon from '../../assets/icons/profile/Data';
-import SettingIcon from '../../assets/icons/profile/Setting';
+import ExploreIcon from '../../assets/icons/profile/Explore';
 import HelpIcon from '../../assets/icons/profile/Help';
+import IncognitoIcon from '../../assets/icons/profile/Incognito';
+import SettingIcon from '../../assets/icons/profile/Setting';
+import StudioIcon from '../../assets/icons/profile/Studio';
+import SwitchIcon from '../../assets/icons/profile/Switch';
+import TimeIcon from '../../assets/icons/profile/Time';
+import {FolderItem} from '../../components/FolderItem';
 
 export default function ListItem() {
   return (

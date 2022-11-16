@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React from 'react';
 import {View} from 'react-native';
 import {useNavigation} from '@react-navigation/native';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
@@ -8,15 +8,15 @@ import {LibraryScreen} from '../screens/LibraryScreen';
 import {ShortsScreen} from '../screens/ShortsScreen';
 import {SubscriptionScreen} from '../screens/SubscriptionScreen';
 
-import HomeIcon from '../assets/icons/Home';
-import HomeBlackIcon from '../assets/icons/HomeBlack';
-import LibraryIcon from '../assets/icons/Library';
-import LibraryBlackIcon from '../assets/icons/LibraryBlack';
-import ShortsIcon from '../assets/icons/Shorts';
-import ShortsBlackIcon from '../assets/icons/ShortsBlack';
-import SubscriptionIcon from '../assets/icons/Subscription';
-import SubscriptionBlackIcon from '../assets/icons/SubscriptionBlack';
-import UploadIcon from '../assets/icons/Upload';
+import HomeIcon from '../../assets/icons/Home';
+import HomeBlackIcon from '../../assets/icons/HomeBlack';
+import LibraryIcon from '../../assets/icons/Library';
+import LibraryBlackIcon from '../../assets/icons/LibraryBlack';
+import ShortsIcon from '../../assets/icons/Shorts';
+import ShortsBlackIcon from '../../assets/icons/ShortsBlack';
+import SubscriptionIcon from '../../assets/icons/Subscription';
+import SubscriptionBlackIcon from '../../assets/icons/SubscriptionBlack';
+import UploadIcon from '../../assets/icons/Upload';
 
 const Tab = createBottomTabNavigator();
 const Placeholder = () => <View />;

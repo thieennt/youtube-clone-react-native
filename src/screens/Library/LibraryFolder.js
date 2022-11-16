@@ -1,10 +1,10 @@
-import {StyleSheet, Text, View} from 'react-native';
 import React from 'react';
+import {StyleSheet, View} from 'react-native';
+import CheckCircleIcon from '../../../assets/icons/library/CheckCircle';
+import DownloadIcon from '../../../assets/icons/library/Download';
+import MovieIcon from '../../../assets/icons/library/Movie';
+import VideoIcon from '../../../assets/icons/library/Video';
 import {FolderItem} from './FolderItem';
-import VideoIcon from '../../assets/icons/library/Video';
-import DownloadIcon from '../../assets/icons/library/Download';
-import MovieIcon from '../../assets/icons/library/Movie';
-import CheckCircleIcon from '../../assets/icons/library/CheckCircle';
 
 export function LibraryFolder() {
   return (

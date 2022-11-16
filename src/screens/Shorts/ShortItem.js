@@ -1,6 +1,6 @@
 import React from 'react';
 import {ImageBackground, StyleSheet, Text, View} from 'react-native';
-import MoreVerticalIcon from '../../assets/icons/MoreVertical';
+import MoreVerticalIcon from '../../../assets/icons/MoreVertical';
 
 const ShortItem = props => {
   return (

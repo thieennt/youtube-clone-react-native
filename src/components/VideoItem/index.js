@@ -1,6 +1,6 @@
 import React from 'react';
 import {Image, StyleSheet, Text, TouchableOpacity, View} from 'react-native';
-import MoreVerticalIcon from '../../assets/icons/MoreVertical';
+import MoreVerticalIcon from '../../../assets/icons/MoreVertical';
 import {useNavigation} from '@react-navigation/native';
 import UserAvatar from '../UserAvatar';
 

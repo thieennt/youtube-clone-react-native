@@ -1,7 +1,7 @@
 import {Pressable, StyleSheet, Text, View} from 'react-native';
 import React from 'react';
-import ArrowLeftIcon from '../../assets/icons/ArrowLeft';
-import MoreHorizontial from '../../assets/icons/MoreHorizontial';
+import ArrowLeftIcon from '../../../assets/icons/ArrowLeft';
+import MoreHorizontial from '../../../assets/icons/MoreHorizontial';
 import {useNavigation} from '@react-navigation/native';
 import {globalStyles} from '../../styles';
 

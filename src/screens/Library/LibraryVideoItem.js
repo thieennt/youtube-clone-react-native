@@ -1,7 +1,7 @@
 import {useNavigation} from '@react-navigation/native';
 import React from 'react';
 import {Image, Pressable, StyleSheet, Text, View} from 'react-native';
-import MoreVerticalIcon from '../../assets/icons/library/MoreVertical';
+import MoreVerticalIcon from '../../../assets/icons/library/MoreVertical';
 
 export const LibraryVideoItem = props => {
   const navigation = useNavigation();

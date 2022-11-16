@@ -1,7 +1,7 @@
 import React from 'react';
 import {Pressable, StyleSheet, Text, View} from 'react-native';
-import RemoveSearchIcon from '../../assets/icons/RemoveSearch';
-import SearchHistoryIcon from '../../assets/icons/SearchHistory';
+import RemoveSearchIcon from '../../../assets/icons/RemoveSearch';
+import SearchHistoryIcon from '../../../assets/icons/SearchHistory';
 
 const SearchItem = props => {
   return (

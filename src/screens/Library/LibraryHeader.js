@@ -1,6 +1,6 @@
 import React from 'react';
 import {Pressable, StyleSheet, Text, View} from 'react-native';
-import HistoryIcon from '../../assets/icons/library/History';
+import HistoryIcon from '../../../assets/icons/library/History';
 
 export const LibraryHeader = () => {
   return (
