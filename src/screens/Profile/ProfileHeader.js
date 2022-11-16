@@ -1,9 +1,9 @@
 import {Pressable, StyleSheet, Text, View} from 'react-native';
 import React from 'react';
 import ArrowLeftIcon from '../../assets/icons/ArrowLeft';
-import {globalStyles} from '../../styles';
 import MoreHorizontial from '../../assets/icons/MoreHorizontial';
 import {useNavigation} from '@react-navigation/native';
+import {globalStyles} from '../../styles';
 
 export function ProfileHeader() {
   const navigation = useNavigation();

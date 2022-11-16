@@ -5,7 +5,7 @@ import CameraIcon from '../assets/icons/Camera';
 import CloseIcon from '../assets/icons/Close';
 import LivestreamIcon from '../assets/icons/Livestream';
 import ShortsIcon from '../assets/icons/Shorts';
-import {UploadItem} from '../components/Upload/UploadItem';
+import {UploadItem} from '../../components/UploadItem';
 
 export const UploadScreen = () => {
   const navigation = useNavigation();

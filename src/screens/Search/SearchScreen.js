@@ -1,19 +1,17 @@
 import {useNavigation} from '@react-navigation/native';
 import React, {useState} from 'react';
 import {Pressable, ScrollView, StyleSheet, TextInput, View} from 'react-native';
-import ArrowLeftIcon from '../assets/icons/ArrowLeft';
-import VoiceIcon from '../assets/icons/Voice';
-import {CardItem} from '../components/Search/CardItem';
-import SearchItem from '../components/Search/SearchItem';
-// import AsyncStorage from '@react-native-community/async-storage';
+import ArrowLeftIcon from '../../../assets/icons/ArrowLeft';
+import VoiceIcon from '../../../assets/icons/Voice';
+import {CardItem} from '../../components/CardItem';
+import SearchItem from './SearchItem';
 
 export const SearchScreen = () => {
   const navigation = useNavigation();
   const [value, setValue] = useState('');
   const [searchResult, setSearchResult] = useState([]);
   const [loading, setLoading] = useState(true);
-  const [searchKeyword, setSearchKeyword] = useState(value);
-  console.log('searchKeyword', searchKeyword);
+  const [searchKeyword, setSearchKeyword] = useState([]);
 
   const handleSearchYoutube = async () => {
     const response = await fetch(
@@ -24,8 +22,14 @@ export const SearchScreen = () => {
     setSearchResult(data.items);
     setLoading(false);
     setSearchKeyword([...searchKeyword, value]);
-    const listKeyword = JSON.stringify(searchKeyword);
-    // await AsyncStorage.setItem('search_keyword', listKeyword);
+  };
+
+  const handleRemove = index => {
+    setSearchKeyword(prev => {
+      const newKeywords = [...prev];
+      newKeywords.splice(index, 1);
+      return newKeywords;
+    });
   };
 
   return (
@@ -67,9 +71,14 @@ export const SearchScreen = () => {
           </>
         ) : (
           <>
-            {listSearch.map((item, index) => (
-              <SearchItem title={item.title} key={index} />
-            ))}
+            {searchKeyword &&
+              searchKeyword.map((item, index) => (
+                <SearchItem
+                  title={item}
+                  key={index}
+                  handleRemove={handleRemove}
+                />
+              ))}
           </>
         )}
       </ScrollView>

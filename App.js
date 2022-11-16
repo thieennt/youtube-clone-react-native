@@ -3,13 +3,11 @@ import React from 'react';
 import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 
-import {SearchScreen} from './screens/SearchScreen';
-import {UploadScreen} from './screens/UploadScreen';
-import {VideoScreen} from './screens/VideoScreen';
-import {AvatarScreen} from './screens/AvatarScreen';
-import {ProfileScreen} from './screens/ProfileScreen';
-import {BottomNavigation} from './navigation/BottomNavigation';
-import './styles';
+import {BottomNavigation} from './src/navigation/BottomNavigation';
+import {SearchScreen} from './src/screens/Search/SearchScreen';
+import {VideoScreen} from './src/screens/Video/VideoScreen';
+import {ProfileScreen} from './src/screens/Profile/ProfileScreen';
+import {UploadScreen} from './src/screens/Upload/UploadScreen';
 
 const Stack = createNativeStackNavigator();
 
@@ -24,7 +22,6 @@ const App = () => {
         <Stack.Screen name="BottomNavigation" component={BottomNavigation} />
         <Stack.Screen name="SearchScreen" component={SearchScreen} />
         <Stack.Screen name="VideoScreen" component={VideoScreen} />
-        <Stack.Screen name="AvatarScreen" component={AvatarScreen} />
         <Stack.Screen name="ProfileScreen" component={ProfileScreen} />
 
         <Stack.Screen

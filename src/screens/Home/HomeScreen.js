@@ -1,9 +1,9 @@
 import React, {useEffect, useState} from 'react';
 import {ScrollView, View} from 'react-native';
-import Header from '../components/Header';
-import {CardItem} from '../components/Search/CardItem';
-import ShortSection from '../components/Shorts';
-import TopNavigation from '../navigation/TopNavigation';
+import {CardItem} from '../../components/CardItem';
+import {Header} from '../../components/Header';
+import ShortSection from '../Shorts/ShortSection';
+import TopNavigation from '../../navigation/TopNavigation';
 
 export const HomeScreen = props => {
   const [listVideo, setListVideo] = useState([]);

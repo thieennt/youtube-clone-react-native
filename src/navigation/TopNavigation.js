@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import {FlatList, StyleSheet, Text, View} from 'react-native';
-import ExploreIcon from '../assets/icons/Explore';
+import ExploreIcon from '../../assets/icons/Explore';
 
 const TopNavigation = () => {
   const [categories, setCategories] = useState(ListCategories);

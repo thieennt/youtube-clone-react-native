@@ -1,6 +1,6 @@
 import {StyleSheet, Text, View} from 'react-native';
 import React from 'react';
-import {FolderItem} from '../Library/FolderItem';
+import {FolderItem} from '../../components/FolderItem';
 import ChannelIcon from '../../assets/icons/profile/Channel';
 import StudioIcon from '../../assets/icons/profile/Studio';
 import ExploreIcon from '../../assets/icons/profile/Explore';

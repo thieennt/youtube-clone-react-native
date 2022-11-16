@@ -2,9 +2,9 @@ import React, {useState} from 'react';
 import {Image, Pressable, StyleSheet, Text, View} from 'react-native';
 import ImagePicker from 'react-native-image-crop-picker';
 import CameraIcon from '../assets/icons/Camera';
-import {ProfileHeader} from '../components/Profile/Header';
-import ListItem from '../components/Profile/ListItem';
-import {globalStyles} from '../styles';
+import ListItem from './ListItem';
+import {globalStyles} from '../../styles';
+import {ProfileHeader} from './ProfileHeader';
 
 export function ProfileScreen() {
   const [showModal, setShowModal] = useState(false);

@@ -1,10 +1,10 @@
 import React, {useEffect, useState} from 'react';
 import {FlatList, ScrollView, View} from 'react-native';
-import Header from '../components/Header';
-import {LibraryFolder} from '../components/Library/LibraryFolder';
-import {LibraryHeader} from '../components/Library/LibraryHeader';
-import {LibraryVideoItem} from '../components/Library/LibraryVideoItem';
-import {Playlists} from '../components/Library/Playlists';
+import {Header} from '../../components/Header';
+import {LibraryFolder} from './LibraryFolder';
+import {LibraryHeader} from './LibraryHeader';
+import {LibraryVideoItem} from './LibraryVideoItem';
+import {Playlists} from './Playlists';
 
 export const LibraryScreen = () => {
   const [listVideo, setListVideo] = useState([]);

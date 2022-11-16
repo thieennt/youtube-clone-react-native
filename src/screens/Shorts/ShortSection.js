@@ -1,6 +1,6 @@
 import React from 'react';
 import {StyleSheet, View} from 'react-native';
-import ShortHeader from './Header';
+import ShortHeader from './ShortHeader';
 import ListShort from './ListShort';
 
 const ShortSection = () => {

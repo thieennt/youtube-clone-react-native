@@ -8,7 +8,9 @@ const SearchItem = props => {
     <View style={styles.container}>
       <SearchHistoryIcon />
       <Text style={styles.text}>{props.title}</Text>
-      <RemoveSearchIcon />
+      <Pressable onPress={props.handleRemove}>
+        <RemoveSearchIcon />
+      </Pressable>
     </View>
   );
 };

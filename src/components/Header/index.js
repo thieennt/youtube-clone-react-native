@@ -5,7 +5,7 @@ import ConnectIcon from '../assets/icons/Connect';
 import NotifyIcon from '../assets/icons/Notify';
 import SearchIcon from '../assets/icons/Search';
 
-const Header = () => {
+export const Header = () => {
   const navigation = useNavigation();
   return (
     <View style={styles.container}>
@@ -71,5 +71,3 @@ const styles = StyleSheet.create({
     borderRadius: 50,
   },
 });
-
-export default Header;

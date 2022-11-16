@@ -1,10 +1,10 @@
 import {StyleSheet, Text, View} from 'react-native';
 import React from 'react';
 import CaretDownIcon from '../../assets/icons/CaretDown';
-import {globalStyles} from '../../styles';
-import {FolderItem} from './FolderItem';
+import {FolderItem} from '../../components/FolderItem';
 import PlusIcon from '../../assets/icons/library/Plus';
 import WatchLaterIcon from '../../assets/icons/library/WatchLater';
+import {globalStyles} from '../../styles';
 
 export function Playlists() {
   return (
